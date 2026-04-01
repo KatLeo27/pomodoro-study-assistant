@@ -27,3 +27,241 @@
 .games button:hover {
   transform: scale(1.05);
 }
+
+.typing-game {
+  text-align: center;
+}
+
+.target-text {
+  background: rgba(255,255,255,0.4);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.typing-game textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.typing-game button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 10px;
+}
+
+.game-area {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 10px auto;
+  background: rgba(255,255,255,0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  background: #f9a8d4;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.circle:hover {
+  transform: scale(1.15);
+}
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card.flipped {
+  background: #c4b5fd;
+}
+
+.timing-game {
+  text-align: center;
+}
+
+.bar {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.target {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 100%;
+  background: #a78bfa;
+  transform: translateX(-50%);
+}
+
+.slider {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: #f9a8d4;
+  border-radius: 5px;
+}
+
+.snake-game {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(15, 15px);
+  gap: 2px;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.cell {
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,0.3);
+}
+
+.snake {
+  background: #a78bfa;
+}
+
+.food {
+  background: #f87171;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.game-card {
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.flappy-game {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.3);
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.bird {
+  position: absolute;
+  left: 50px;
+  width: 20px;
+  height: 20px;
+  background: #a78bfa;
+  border-radius: 50%;
+}
+
+.pipe {
+  position: absolute;
+  width: 40px;
+  background: #6ee7b7;
+}
+
+.pipe.top {
+  top: 0;
+}
+
+.pipe.bottom {
+  height: 300px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.game-card {
+  padding: 18px;
+  border-radius: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+  color: #333;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.typing {
+  background: #e9d5ff;
+}
+
+.mole {
+  background: #d1fae5;
+}
+
+.memory {
+  background: #fbcfe8;
+}
+
+.snake {
+  background: #bbf7d0;
+}
+
+.timing {
+  background: #fed7aa;
+}
+
+.flappy {
+  background: #bae6fd;
+}
