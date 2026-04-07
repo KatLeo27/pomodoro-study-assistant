@@ -1,15 +1,20 @@
 import Timer from "./components/timer/timer";
-import GamePanel from "./components/games/GamePanel";
+import GameView from "./components/games/GameView";
+import Calendar from "./components/calendar/Calendar";
+import Navigation from "./components/navigation/Navigation";
 import { useState } from "react";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("focus");
   const [mode, setMode] = useState("focus");
 
   return (
     <div className="app-container">
-      <Timer mode={mode} setMode={setMode} />
+      {activeTab === "focus" && <Timer mode={mode} setMode={setMode} />}
+      {activeTab === "games" && <GameView mode={mode} setMode={setMode} />}
+      {activeTab === "calendar" && <Calendar />}
 
-      <GamePanel mode={mode} />
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   );
 }
