@@ -3,17 +3,13 @@ import { useState, useEffect } from "react";
 const symbols = ["🍎", "🌸", "⭐", "🍀", "🎵", "💜"];
 
 function MemoryGame() {
-  const [cards, setCards] = useState([]);
-  const [flipped, setFlipped] = useState([]);
-  const [matched, setMatched] = useState([]);
-
-  useEffect(() => {
-    const shuffled = [...symbols, ...symbols]
+  const [cards, setCards] = useState(() => {
+    return [...symbols, ...symbols]
       .sort(() => Math.random() - 0.5)
       .map((item, index) => ({ id: index, value: item }));
-
-    setCards(shuffled);
-  }, []);
+  });
+  const [flipped, setFlipped] = useState([]);
+  const [matched, setMatched] = useState([]);
 
   const handleClick = (card) => {
     if (flipped.length === 2 || flipped.includes(card.id)) return;
@@ -53,9 +49,9 @@ function MemoryGame() {
           );
         })}
       </div>
+      {matched.length === symbols.length && <p>You Win!</p>}
     </div>
   );
-  {matched.length === symbols.length && <p>You Win!</p>}
 }
 
 export default MemoryGame;

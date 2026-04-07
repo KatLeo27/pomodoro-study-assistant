@@ -1,0 +1,69 @@
+.mini-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-timer-circle {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-timer-circle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mini-time-text {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.mini-timer-btn {
+  padding: 6px 12px;
+  border: 1px solid #2d5016;
+  background-color: transparent;
+  color: #2d5016;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.mini-timer-btn:hover {
+  background-color: #2d5016;
+  color: #fff;
+}
+
+.focus-notice {
+  font-size: 11px;
+  color: #a78bfa;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.break-notice {
+  font-size: 11px;
+  color: #6ee7b7;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.break-ended {
+  font-size: 11px;
+  color: #6ee7b7;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}

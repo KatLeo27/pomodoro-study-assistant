@@ -11,8 +11,21 @@ function GamePanel({ mode }) {
   const isBreak = mode !== "focus";
   const [activeGame, setActiveGame] = useState(null);
 
+  const renderGame = () => {
+    switch (activeGame) {
+      case "typing": return <TypingGame />;
+      case "mole": return <WhackAMole />;
+      case "memory": return <MemoryGame />;
+      case "snake": return <SnakeGame />;
+      case "timing": return <TimingGame />;
+      case "flappy": return <FlappyBird />;
+      default: return null;
+    }
+  };
+
   return (
-    <div className="game-panel glass">
+    <div className="game-panel">
+
       {!isBreak && (
         <div className="locked">
           <p>Games available during breaks</p>
@@ -21,23 +34,25 @@ function GamePanel({ mode }) {
 
       {isBreak && (
         <>
-          <div className="game-grid">
-            <div onClick={() => setActiveGame("typing")} className="game-card typing">Typing</div>
-            <div onClick={() => setActiveGame("mole")} className="game-card mole">Whack-a-Mole</div>
-            <div onClick={() => setActiveGame("memory")} className="game-card memory">Memory</div>
-            <div onClick={() => setActiveGame("snake")} className="game-card snake">Snake</div>
-            <div onClick={() => setActiveGame("timing")} className="game-card timing">Timing</div>
-            <div onClick={() => setActiveGame("flappy")} className="game-card flappy">Flappy</div>
-          </div>
+          {/* FULLSCREEN GAME */}
+          {activeGame && (
+            <div className="fullscreen-game">
+              <button className="back-btn" onClick={() => setActiveGame(null)}>
+                ⬅ Back
+              </button>
+              {renderGame()}
+            </div>
+          )}
 
-          <div className="game-display">
-            {activeGame === "typing" && <TypingGame />}
-            {activeGame === "mole" && <WhackAMole />}
-            {activeGame === "memory" && <MemoryGame />}
-            {activeGame === "snake" && <SnakeGame />}
-            {activeGame === "timing" && <TimingGame />}
-            {activeGame === "flappy" && <FlappyBird />}
-          </div>
+          {/* BOTTOM DOCK */}
+          <div className="game-dock">
+  <div onClick={() => setActiveGame("typing")} className="dock-card typing">Typing</div>
+  <div onClick={() => setActiveGame("mole")} className="dock-card mole">Mole</div>
+  <div onClick={() => setActiveGame("memory")} className="dock-card memory">Memory</div>
+  <div onClick={() => setActiveGame("snake")} className="dock-card snake">Snake</div>
+  <div onClick={() => setActiveGame("timing")} className="dock-card timing">Timing</div>
+  <div onClick={() => setActiveGame("flappy")} className="dock-card flappy">Flappy</div>
+</div>
         </>
       )}
     </div>

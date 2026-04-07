@@ -1,0 +1,84 @@
+.game-navbar {
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  background-color: #f5f5f0;
+  border-top: 1px solid #e0e0d8;
+  border-bottom: 1px solid #e0e0d8;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  z-index: 99;
+}
+
+.game-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-message {
+  font-size: 12px;
+  color: #d67c7c;
+  font-weight: 600;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.game-btn {
+  padding: 8px 14px;
+  border: 1px solid #d0d0c8;
+  background-color: #fff;
+  color: #999;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.game-btn:hover:not(:disabled) {
+  border-color: #2d5016;
+  color: #333;
+  background-color: #f9f9f6;
+}
+
+.game-btn.active {
+  background-color: #2d5016;
+  color: #fff;
+  border-color: #2d5016;
+  font-weight: 600;
+}
+
+.game-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.game-btn.locked {
+  opacity: 0.6;
+}
+
+.close-btn {
+  padding: 8px 12px;
+  border: 1px solid #d0d0c8;
+  background-color: #fff;
+  color: #d67c7c;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  border-color: #d67c7c;
+  background-color: #fef9f9;
+}

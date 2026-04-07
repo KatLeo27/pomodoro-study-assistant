@@ -182,3 +182,8 @@
     border-right-color: var(--border);
   }
 }
+
+.app-container {
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
