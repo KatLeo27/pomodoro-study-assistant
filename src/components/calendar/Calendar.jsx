@@ -15,7 +15,6 @@ export default function Calendar() {
   });
   const [newTaskText, setNewTaskText] = useState("");
 
-  // Save tasks to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("pomodoroTasks", JSON.stringify(taskData));
   }, [taskData]);
@@ -43,10 +42,10 @@ export default function Calendar() {
 
   const getHeatmapColor = (percentage) => {
     if (percentage === 0) return "#e5e7eb";
-    if (percentage <= 25) return "#d1fae5";
-    if (percentage <= 50) return "#a7f3d0";
-    if (percentage <= 75) return "#6ee7b7";
-    return "#10b981";
+    if (percentage <= 25) return "#9af4b2";
+    if (percentage <= 50) return "#85e595";
+    if (percentage <= 75) return "#56ea78";
+    return "#08c03f";
   };
 
   const isToday = (date) => {
@@ -114,12 +113,10 @@ export default function Calendar() {
   const days = [];
   const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-  // Add empty cells for days before month starts
   for (let i = 0; i < startingDayOfWeek; i++) {
     days.push(null);
   }
 
-  // Add days of the month
   for (let date = 1; date <= daysInMonth; date++) {
     days.push(new Date(year, month, date));
   }
@@ -143,7 +140,7 @@ export default function Calendar() {
   return (
     <div className="calendar-container">
       <div className="calendar-header">
-        <h2>{monthName}</h2>
+        <h2 className="month">{monthName}</h2>
         <div className="calendar-controls">
           <button onClick={prevMonth} className="nav-btn">
             ←
@@ -264,28 +261,28 @@ export default function Calendar() {
           <div className="legend-item">
             <div
               className="legend-color"
-              style={{ backgroundColor: "#d1fae5" }}
+              style={{ backgroundColor: "#9af4b2" }}
             ></div>
             <span>1-25%</span>
           </div>
           <div className="legend-item">
             <div
               className="legend-color"
-              style={{ backgroundColor: "#a7f3d0" }}
+              style={{ backgroundColor: "#85e595" }}
             ></div>
             <span>25-50%</span>
           </div>
           <div className="legend-item">
             <div
               className="legend-color"
-              style={{ backgroundColor: "#6ee7b7" }}
+              style={{ backgroundColor: "#56ea78" }}
             ></div>
             <span>50-75%</span>
           </div>
           <div className="legend-item">
             <div
               className="legend-color"
-              style={{ backgroundColor: "#10b981" }}
+              style={{ backgroundColor: "#08c03f" }}
             ></div>
             <span>75-100%</span>
           </div>
