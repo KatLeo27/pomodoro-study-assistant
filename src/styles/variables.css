@@ -1,13 +1,2 @@
-:root {
-  --primary: #8b5cf6;
-  --secondary: #c4b5fd;
-  --bg-gradient: linear-gradient(135deg, #f1f8f0, #fce7f3, #f1f8f0);
-  
-  --card-bg: rgba(255, 255, 255, 0.4);
-  --glass-blur: blur(12px);
-
-  --text-dark: #2e1065;
-  --text-light: #6b7280;
-
-  --radius: 20px;
-}
+/* CSS variables are now defined in index.css */
+/* This file is kept for potential future use */

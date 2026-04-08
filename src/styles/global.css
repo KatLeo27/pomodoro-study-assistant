@@ -1,12 +1,116 @@
 @import "./variables.css";
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg-gradient);
+  font-family: var(--sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
-.glass {
-  background: var(--card-bg);
-  backdrop-filter: var(--glass-blur);
-  border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+
+/* Reusable card component */
+.card {
+  background: #fefefe;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-smooth);
 }
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-2px);
+}
+
+/* Reusable button styles */
+.btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  font-family: var(--sans);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--primary-accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #3d6d57;
+}
+
+.btn-secondary {
+  background: #fefefe;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+  background: #f9f9f7;
+  border-color: var(--primary-accent);
+}
+
+/* Reusable input styles */
+input,
+textarea {
+  font-family: var(--sans);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: all var(--transition-fast);
+  background: #fefefe;
+  color: var(--text-primary);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 3px rgba(79, 143, 111, 0.1);
+}
+
+/* Spacing utilities */
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+
+.p-16 { padding: 16px; }
+.p-24 { padding: 24px; }
+.p-32 { padding: 32px; }
+
+/* Center utilities */
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-muted { color: var(--secondary-text); }
+.text-primary { color: var(--text-primary); }

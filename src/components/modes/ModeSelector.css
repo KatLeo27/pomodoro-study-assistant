@@ -1,28 +1,37 @@
 .mode-selector {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
 
 .mode-selector button {
-  border: none;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  padding: 11px 20px;
+  border-radius: var(--radius-full);
+  background: #fefefe;
   cursor: pointer;
   font-size: 14px;
-  color: var(--text-dark);
-  transition: all 0.2s ease;
+  font-weight: 500;
+  color: var(--secondary-text);
+  transition: all var(--transition-smooth);
+  font-family: var(--sans);
+  box-shadow: var(--shadow-soft);
 }
 
 .mode-selector button:hover {
-  transform: scale(1.05);
+  color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  background: #f9f9f7;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .mode-selector button.active {
-  background: var(--primary);
+  background: var(--primary-accent);
   color: white;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  border-color: var(--primary-accent);
+  box-shadow: var(--shadow-medium);
+  font-weight: 600;
 }

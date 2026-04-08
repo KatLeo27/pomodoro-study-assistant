@@ -1,42 +1,155 @@
 .timer-container {
-  width: 420px;
-  margin: 40px auto;
-  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 24px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .session-label {
-  letter-spacing: 2px;
-  color: var(--text-light);
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--secondary-text);
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  color: var(--text-light);
-  margin-bottom: 20px;
+  color: var(--secondary-text);
+  margin-bottom: 32px;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .timer-circle {
   position: relative;
-  width: 220px;
-  height: 220px;
-  margin: 30px auto;
+  width: 280px;
+  height: 280px;
+  margin: 40px auto;
+  background: #f5efeb;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
+  overflow: visible;
+}
+
+.timer-circle:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.timer-circle svg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  bottom: 40px;
 }
 
 .time-text {
-  position: absolute;
-  top: 32%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 48px;
-  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+  font-size: 64px;
+  font-weight: 700;
+  color: #2f4156;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* SVG Progress Ring */
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset var(--transition-smooth);
+  stroke: var(--primary-accent);
+  stroke-linecap: round;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .controls button {
-  background: var(--primary);
+  background: var(--primary-accent);
   border: none;
-  padding: 12px 20px;
-  border-radius: 50px;
-  color: white;
+  padding: 14px 32px;
+  border-radius: var(--radius-full);
+  color: #f5efeb;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
+  font-family: var(--sans);
+}
+
+.controls button:hover {
+  background: #567c8d;
+  transform: scale(1.03);
+  box-shadow: var(--shadow);
+}
+
+.controls button:active {
+  transform: scale(0.98);
+}
+
+.controls button.secondary {
+  background: #f5efeb;
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.controls button.secondary:hover {
+  background: #2f4156;
+  border-color: var(--primary-accent);
+}
+
+/* Modes container */
+.modes-container {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: #f5efeb;
+  color: var(--secondary-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+  border: 1px solid var(--border-light);
+  font-family: var(--sans);
+}
+
+.mode-btn:hover {
+  color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  background: #2f4156;
+}
+
+.mode-btn.active {
+  background: var(--primary-accent);
+  color: white;
+  border-color: var(--primary-accent);
+  box-shadow: var(--shadow-soft);
 }

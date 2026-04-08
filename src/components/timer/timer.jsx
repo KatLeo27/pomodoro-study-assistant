@@ -14,9 +14,9 @@ function Timer({ mode, setMode }) {
   };
 
   const getColor = () => {
-  if (mode === "focus") return "#a78bfa";
-  if (mode === "short") return "#6ee7b7";
-  if (mode === "long") return "#fdba74";
+  if (mode === "focus") return "#2f4156";
+  if (mode === "short") return "#567c8d";
+  if (mode === "long") return "#567c8d";
 };
 
   const { time, setTime, isRunning, setIsRunning } = useTimer(getTime());
